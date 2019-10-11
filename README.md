@@ -7,12 +7,15 @@ LightDB is a light weight Android Library that uses SharedPreferences to store k
 The simplest way to use LightDB is to add the library as dependency to your build.
 
 ```bash
-repositories {
-    mavenCentral()
-}
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 
 dependencies {
-    compile 'com.hishd:LightDB:0.1.0'
+    compile 'com.github.hishd:LightDB:0.1.0'
 }
 
 ```

@@ -15,8 +15,28 @@ public class LightDB {
      * Android's SharedPreferences instance
      * Android's SharedPreferences Editor instance
      */
-    SharedPreferences sharedPreferences;
-    SharedPreferences.Editor editor;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+
+    /**
+     * Instance for the singleton class
+     */
+    private static LightDB instance;
+
+    /**
+     * Initialize the constructor and returns the instance to make it singleton
+     *
+     * @param name The name of the Database that stores all the key - values pairs
+     * @param context Context of the current Android Application
+     * @return
+     */
+    public static LightDB getInstance(String name, Context context) {
+        if(instance == null) {
+            instance = new LightDB(name, context);
+        }
+
+        return instance;
+    }
 
     /**
      * Constructor for the LightDB Class that initialize the SharedPreferences and the Editor instances
@@ -24,7 +44,7 @@ public class LightDB {
      * @param name The name of the Database that stores all the key - values
      * @param context Context of the current Android Application
      */
-    public LightDB(String name, Context context){
+    private LightDB(String name, Context context){
         sharedPreferences = context.getSharedPreferences(name,Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }

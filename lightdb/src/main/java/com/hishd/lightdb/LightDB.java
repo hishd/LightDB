@@ -55,7 +55,7 @@ public class LightDB {
      * @param key The name of the key that the boolean value is stores
      * @param value The value referenced to the key
      */
-    public void saveBoolen(String key, boolean value){
+    public void saveBoolean(String key, boolean value){
         editor.putBoolean(key,value);
         editor.apply();
     }
@@ -149,7 +149,7 @@ public class LightDB {
      *
      * @param map The Map that stores all the keys and values
      */
-    public void saveBoolenList(Map<String,Boolean> map){
+    public void saveBooleanList(Map<String,Boolean> map){
         for(Map.Entry<String,Boolean> entry : map.entrySet()){
             editor.putBoolean(entry.getKey(),entry.getValue());
             editor.apply();
@@ -174,6 +174,7 @@ public class LightDB {
      */
     public void removeAll(){
         editor.clear();
+        editor.apply();
     }
 
     /**
@@ -183,6 +184,7 @@ public class LightDB {
      */
     public void removeValue(String key){
         editor.remove(key);
+        editor.apply();
     }
 
     /**

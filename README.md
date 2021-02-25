@@ -15,7 +15,7 @@ allprojects {
 	}
 
 dependencies {
-    implementation 'com.github.hishd:LightDB:0.1.0'
+    implementation 'com.github.hishd:LightDB:1.0.2'
 }
 
 ```

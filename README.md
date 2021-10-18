@@ -1,4 +1,6 @@
 # LightDB
+[![](https://jitpack.io/v/hishd/LightDB.svg)](https://jitpack.io/#hishd/LightDB)
+
 
 LightDB is a light weight Android Library that uses SharedPreferences to store key - value pairs.
 
